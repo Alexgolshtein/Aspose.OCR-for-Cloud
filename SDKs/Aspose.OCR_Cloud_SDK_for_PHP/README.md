@@ -5,7 +5,7 @@ Aspose.OCR for Cloud is a Cloud API to recognize text from images. This is the r
 Installation
 ----------------------------------
 
-Add the following line to your `composer.json` file:
+Add `aspose/ocr-sdk-php` to your `composer.json` file and run `composer update` from your project directory.
 
 ```json
 {
@@ -14,5 +14,3 @@ Add the following line to your `composer.json` file:
     }
 }
 ```
-
-Install the new dependencies by running `composer update` from the directory where your `composer.json` file is located.
