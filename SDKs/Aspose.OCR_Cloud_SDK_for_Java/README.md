@@ -2,19 +2,6 @@
 
 Aspose.OCR for Cloud is a Cloud API to recognize text from images. This is the repository for Aspose.OCR Cloud SDK for Java. Using this SDK, Aspose.OCR Cloud APIs can be easily used in Java applications.
 
-## Installation
+## How to use the SDK?
 
-To add the library to your project, use the following maven dependency declaration.
-
-```xml
-<dependency>
-    <groupId>com.aspose</groupId>
-    <artifactId>aspose-cloud-ocr</artifactId>
-    <version>1.0.0</version>
-</dependency>
-...
-<repository>
-  <url>http://maven.aspose.com/repository/repo/</url>
-  <id>aspose-maven-repository</id>
-</repository>
-```
+The complete source code is available in this repository folder, you can either directly use it in your project or use [Composer](composer/composer). For more details, please visit our [documentation](http://www.aspose.com/docs/display/ocrcloud/How+to+Setup+Aspose.OCR+Cloud+SDK+for+Java).
