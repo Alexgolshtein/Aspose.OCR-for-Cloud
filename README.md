@@ -14,3 +14,11 @@ Directory | Description
 --------- | -----------
 [Java SDK](SDKs/Aspose.OCR_Cloud_SDK_for_Java)  |  Aspose.OCR for Cloud Java SDK.
 [PHP SDK](SDKs/Aspose.OCR_Cloud_SDK_for_PHP)  |  Aspose.OCR for Cloud PHP SDK.
+
+## Resources
+
++ **Website:** [www.aspose.com](http://www.aspose.com)
++ **Product Home:** [Aspose.OCR for Cloud](http://www.aspose.com/cloud/ocr-api.aspx)
++ **Documentation:** [Aspose.OCR for Cloud Documentation](http://www.aspose.com/docs/display/ocrcloud)
++ **Forum:** [Aspose.OCR for .NET Forum](http://www.aspose.com/community/forums/aspose.ocr-product-family/493/showforum.aspx)
++ **Blog:** [Aspose.OCR for .NET Blog](http://www.aspose.com/blogs/aspose-products/aspose-ocr-product-family.html)
