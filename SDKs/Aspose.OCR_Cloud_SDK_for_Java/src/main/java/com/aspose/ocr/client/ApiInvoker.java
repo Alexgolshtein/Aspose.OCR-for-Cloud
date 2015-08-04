@@ -198,7 +198,15 @@ public class ApiInvoker {
 			if (body == null) {
         response = builder.post(ClientResponse.class, null);
 			} else if (body instanceof FormDataMultiPart) {
-        response = builder.type(contentType).post(ClientResponse.class, body);
+			   FormDataMultiPart form = (FormDataMultiPart) body;
+            File file = (File) form.getField("file").getEntity();
+            try {
+            InputStream fileInStream = new FileInputStream(file);
+               String sContentDisposition = "attachment; filename=\"" + file.getName() + "\"";
+            response = builder.type(MediaType.APPLICATION_OCTET_STREAM).header("Content-Disposition", sContentDisposition).post(ClientResponse.class, fileInStream);
+            } catch (java.io.FileNotFoundException ex) {
+            }
+        
 			} else {
         response = builder.type(contentType).post(ClientResponse.class, serialize(body));
     }

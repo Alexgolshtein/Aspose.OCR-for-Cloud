@@ -146,10 +146,7 @@ try {
 
   public OCRResponse PostOcrFromUrlOrContent (String url, String language, Boolean useDefaultDictionaries, File file) {
     Object postBody = null;
-    // verify required params are set
-    if(file == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+
     // create path and map variables
     String resourcePath = "/ocr/recognize/?appSid={appSid}&amp;url={url}&amp;language={language}&amp;useDefaultDictionaries={useDefaultDictionaries}";
         resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?").replace("toFormat={toFormat}", "format={format}");
@@ -175,7 +172,9 @@ try {
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
-if(contentType.startsWith("multipart/form-data")) {      
+ if(file == null){
+    contentType = "application/json";
+ }else{      
       FormDataMultiPart mp = new FormDataMultiPart();
       mp.field("file", file, MediaType.MULTIPART_FORM_DATA_TYPE);
         postBody = mp;
