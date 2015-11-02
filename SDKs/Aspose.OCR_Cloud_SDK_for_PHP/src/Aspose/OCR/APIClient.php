@@ -72,6 +72,11 @@ class APIClient {
     public function callAPI($resourcePath, $method, $queryParams, $postData, $headerParams) {
 
         $headers = array();
+        if ($headerParams != null) {
+            foreach ($headerParams as $key => $val) {
+                $headers[] = "$key: $val";
+            }
+        }
 
         if (is_object($postData) or is_array($postData)) {
             $postData = json_encode(self::sanitizeForSerialization($postData));
@@ -128,8 +133,22 @@ class APIClient {
 //		}
 
         if ($method == self::$POST) {
+            if (file_exists($postData)) {
+
+                $fp = fopen($postData, "r");
+
+                curl_setopt($curl, CURLOPT_VERBOSE, 1);
+                curl_setopt($curl, CURLOPT_USERPWD, 'user:password');
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_UPLOAD, true);
+                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
+                curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+                curl_setopt($curl, CURLOPT_INFILE, $fp);
+                curl_setopt($curl, CURLOPT_INFILESIZE, filesize($postData));
+            } else {    
             curl_setopt($curl, CURLOPT_POST, true);
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
+            }
         } else if ($method == self::$PUT) {
             if (file_exists($postData)) {
 
@@ -143,7 +162,6 @@ class APIClient {
                 curl_setopt($curl, CURLOPT_INFILE, $fp);
                 curl_setopt($curl, CURLOPT_INFILESIZE, filesize($postData));
             } else {
-                $json_data = json_encode($postData);
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
                 curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
             }
@@ -159,6 +177,8 @@ class APIClient {
         // Make the request
         $response = curl_exec($curl);
         $response_info = curl_getinfo($curl);
+
+	print_r($response);
 
         // Handle the response
         if ($response_info['http_code'] == 0) {
@@ -308,7 +328,7 @@ class APIClient {
         return $instance;
     }
     
-    public function isJson($string) {
+    public static function isJson($string) {
         return is_string($string) && is_object(json_decode($string)) && (json_last_error() == JSON_ERROR_NONE) ? true : false;
     }
 
