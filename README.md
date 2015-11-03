@@ -14,6 +14,7 @@ Directory | Description
 --------- | -----------
 [Java SDK](SDKs/Aspose.OCR_Cloud_SDK_for_Java)  |  Aspose.OCR for Cloud Java SDK.
 [PHP SDK](SDKs/Aspose.OCR_Cloud_SDK_for_PHP)  |  Aspose.OCR for Cloud PHP SDK.
+[Python SDK](SDKs/Aspose.OCR_Cloud_SDK_for_Python)  |  Aspose.OCR for Cloud Python SDK.
 
 ## Resources
 
