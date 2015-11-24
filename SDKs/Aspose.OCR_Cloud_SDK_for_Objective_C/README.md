@@ -3,7 +3,7 @@ This SDK allows you to work with Aspose.OCR for Cloud APIs in your iOS app quick
 
 ### Cocoapods
 
-[CocoaPods](http://cocoapods.org) is the recommended way to add Aspose-Barcode-SDK to your project.
+[CocoaPods](http://cocoapods.org) is the recommended way to add Aspose-OCR-SDK to your project.
 
 1. Add a pod entry for Aspose-OCR-SDK to your Podfile `pod 'AsposeOCRCloud'`
 2. Install the pod(s) by running `pod install`.
