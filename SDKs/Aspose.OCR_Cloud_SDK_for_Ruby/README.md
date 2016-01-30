@@ -45,4 +45,4 @@ Aspose OCR SDK includes a suite of unit tests within the [test](https://github.c
 Your feedback is very important to us. Please email us all your queries and feedback at marketplace@aspose.com.
 
 ## License
-Aspose OCR SDK is available under the MIT license. See the [LICENSE](http://www.aspose.com/docs/display/ocrcloud/How+to+Setup+Aspose.OCR+Cloud+SDK+for+Ruby) file for more info.
+Aspose OCR SDK is available under the MIT license. See the [LICENSE](https://github.com/asposeocr/Aspose_OCR_Cloud/blob/master/SDKs/Aspose.OCR_Cloud_SDK_for_Ruby/LICENSE) file for more info.
