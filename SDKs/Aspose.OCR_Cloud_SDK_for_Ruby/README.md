@@ -39,10 +39,10 @@ class OCRUsage
 end
 ```
 ## Unit Tests
-Aspose OCR SDK includes a suite of unit tests within the [test]() subdirectory. These Unit Tests also serves as examples of how to use the Aspose OCR SDK.
+Aspose OCR SDK includes a suite of unit tests within the [test](https://github.com/asposeocr/Aspose_OCR_Cloud/blob/master/SDKs/Aspose.OCR_Cloud_SDK_for_Ruby/test/ocr_tests.rb) subdirectory. These Unit Tests also serves as examples of how to use the Aspose OCR SDK.
 
 ## Contact
 Your feedback is very important to us. Please email us all your queries and feedback at marketplace@aspose.com.
 
 ## License
-Aspose OCR SDK is available under the MIT license. See the [LICENSE]() file for more info.
+Aspose OCR SDK is available under the MIT license. See the [LICENSE](https://github.com/asposeocr/Aspose_OCR_Cloud/blob/master/SDKs/Aspose.OCR_Cloud_SDK_for_Ruby/LICENSE) file for more info.
