@@ -18,6 +18,7 @@ Directory | Description
 [iOS SDK](https://github.com/asposeocr/Aspose_OCR_Cloud/tree/master/SDKs/Aspose.OCR_Cloud_SDK_for_Objective_C) | Aspose.OCR Cloud SDK for Objective C
 [Ruby SDK](SDKs/Aspose.OCR_Cloud_SDK_for_Ruby) |  Aspose.OCR Cloud SDK for Ruby.
 [Node.js SDK](SDKs/Aspose.OCR_Cloud_SDK_for_NodeJS) |  Aspose.OCR Cloud SDK for Node.js.
+[.NET SDK](SDKs/Aspose.OCR_Cloud_SDK_for_CSharp) |  Aspose.OCR Cloud SDK for CSharp.
 
 ## Resources
 
