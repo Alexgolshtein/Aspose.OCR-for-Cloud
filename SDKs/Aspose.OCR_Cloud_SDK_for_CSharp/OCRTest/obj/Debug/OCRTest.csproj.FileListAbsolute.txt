@@ -1,0 +1,11 @@
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\ocr\OCRTest\bin\Debug\OCRTest.dll
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\ocr\OCRTest\bin\Debug\OCRTest.pdb
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\ocr\OCRTest\bin\Debug\Aspose.OCR-Cloud.exe
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\ocr\OCRTest\bin\Debug\Aspose.Storage-Cloud.dll
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\ocr\OCRTest\bin\Debug\LinqBridge.dll
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\ocr\OCRTest\bin\Debug\Newtonsoft.Json.dll
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\ocr\OCRTest\bin\Debug\Aspose.OCR-Cloud.pdb
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\ocr\OCRTest\bin\Debug\Newtonsoft.Json.xml
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\ocr\OCRTest\obj\Debug\OCRTest.csprojResolveAssemblyReference.cache
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\ocr\OCRTest\obj\Debug\OCRTest.dll
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\ocr\OCRTest\obj\Debug\OCRTest.pdb
