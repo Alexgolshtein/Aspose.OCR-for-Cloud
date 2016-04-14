@@ -13,6 +13,7 @@ Aspose.OCR for Cloud is implemented as a REST API. If you use SDK, it hides the 
 Directory | Description
 --------- | -----------
 [Java SDK](SDKs/Aspose.OCR_Cloud_SDK_for_Java)  |  Aspose.OCR Cloud SDK for Java.
+[Android SDK](SDKs/Aspose.OCR-Cloud-SDK-for-Android) | Aspose.OCR Cloud SDK for Android.
 [PHP SDK](SDKs/Aspose.OCR_Cloud_SDK_for_PHP)  |  Aspose.OCR Cloud SDK for PHP.
 [Python SDK](SDKs/Aspose.OCR_Cloud_SDK_for_Python)  |  Aspose.OCR Cloud SDK for Python.
 [iOS SDK](https://github.com/asposeocr/Aspose_OCR_Cloud/tree/master/SDKs/Aspose.OCR_Cloud_SDK_for_Objective_C) | Aspose.OCR Cloud SDK for Objective C
