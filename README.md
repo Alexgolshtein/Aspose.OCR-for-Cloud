@@ -20,6 +20,7 @@ Directory | Description
 [Ruby SDK](SDKs/Aspose.OCR_Cloud_SDK_for_Ruby) |  Aspose.OCR Cloud SDK for Ruby.
 [Node.js SDK](SDKs/Aspose.OCR_Cloud_SDK_for_NodeJS) |  Aspose.OCR Cloud SDK for Node.js.
 [.NET SDK](SDKs/Aspose.OCR_Cloud_SDK_for_CSharp) |  Aspose.OCR Cloud SDK for CSharp.
+[Perl SDK](SDKs/Aspose.OCR-Cloud-SDK-for-Perl) |  Aspose.OCR Cloud SDK for Perl.
 
 ## Resources
 
