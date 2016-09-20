@@ -32,7 +32,7 @@ try {
 	ocrApi.PostOcrFromUrlOrContent(url, language, useDefaultDictionaries, null, function(responseMessage) {
 		assert.equal(responseMessage.status, 'OK');
 		console.log("Text :: " + responseMessage.body.Text);
-		console.log("Extract OCR or HOCR Text from Images without using Storage, Done!");
+		console.log("Extract OCR or HOCR Text from image url, Done!");
 	});
 
 }catch (e) {
