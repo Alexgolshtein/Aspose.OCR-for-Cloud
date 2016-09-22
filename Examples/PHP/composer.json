@@ -1,0 +1,5 @@
+{
+  "require": {
+    "aspose/ocr-sdk-php": "dev-master"
+  }
+}
