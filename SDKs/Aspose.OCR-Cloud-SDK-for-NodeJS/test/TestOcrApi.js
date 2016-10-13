@@ -3,8 +3,8 @@ var StorageApi = require('asposestoragecloud');
 var OcrApi = require('../lib/OcrApi');
 var assert = require('assert');
 
-var AppSID = 'XXX'; //sepcify App SID
-var AppKey = 'XXX'; //sepcify App Key
+var AppSID = 'XXX'; //specify App SID
+var AppKey = 'XXX'; //specify App Key
 var config = {'appSid':AppSID,'apiKey':AppKey , 'debug' : true};
 var data_path = './data/';
 
