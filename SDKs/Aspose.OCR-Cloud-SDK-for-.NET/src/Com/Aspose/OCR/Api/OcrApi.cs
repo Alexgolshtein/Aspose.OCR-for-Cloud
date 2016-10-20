@@ -8,7 +8,7 @@
       string basePath;
       private readonly ApiInvoker apiInvoker = ApiInvoker.GetInstance();
 
-      public OcrApi(String apiKey, String appSid, String basePath = "http://api.aspose.com/v1.1")
+      public OcrApi(String apiKey, String appSid, String basePath )
       {
 	apiInvoker.apiKey = apiKey;
         apiInvoker.appSid = appSid;
