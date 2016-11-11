@@ -24,7 +24,7 @@ from requests.utils import quote
 
 
 class ApiClient(object):
-    def __init__(self, apiKey=None, appSid=None, debug=False, apiServer='http://api.aspose.com/v1.1'):
+    def __init__(self, apiKey=None, appSid=None, debug=False, apiServer='http://api.aspose.cloud/v1.1'):
         if apiKey == None:
             raise Exception('You must pass an apiKey when instantiating the '
                             'APIClient')

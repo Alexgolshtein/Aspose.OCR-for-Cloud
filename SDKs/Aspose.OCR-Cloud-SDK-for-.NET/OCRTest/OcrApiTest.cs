@@ -18,7 +18,7 @@ namespace OCRTest
 
         string APIKEY = "xxxxxx";
         string APPSID = "xxxxxx";
-        string BASEPATH = "http://api.aspose.com/v1.1";
+        string BASEPATH = "http://api.aspose.cloud/v1.1";
         private TestContext testContextInstance;
 
         /// <summary>

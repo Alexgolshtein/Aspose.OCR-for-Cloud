@@ -12,7 +12,7 @@ import java.io.File;
 import java.util.*;
 
 public class OcrApi {
-  String basePath = "http://api.aspose.com/v1.1";
+  String basePath = "http://api.aspose.cloud/v1.1";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
   ApiInvokerResponse response = null;
 

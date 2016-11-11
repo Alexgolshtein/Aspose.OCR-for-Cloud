@@ -12,7 +12,7 @@ use File::Slurp;
 use AsposeOcrCloud::ApiClient;
 use AsposeOcrCloud::Configuration;
 
-my $VERSION = '1.00';
+my $VERSION = '1.01';
 
 sub new {
     my $class   = shift;

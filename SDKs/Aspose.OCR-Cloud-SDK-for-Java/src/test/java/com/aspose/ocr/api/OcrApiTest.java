@@ -40,7 +40,7 @@ public class OcrApiTest {
 	
 	@Before
 	public void setUp() {
-		ocrApi = new OcrApi("http://api.aspose.com/v1.1",apiKey,appSID);
+		ocrApi = new OcrApi("http://api.aspose.cloud/v1.1",apiKey,appSID);
 	}
 	
 	@After

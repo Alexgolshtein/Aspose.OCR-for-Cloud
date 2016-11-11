@@ -21,8 +21,10 @@ lib/AsposeOcrCloud/Object/StyleIdentifier.pm
 lib/AsposeOcrCloud/Object/TextEffect.pm
 lib/AsposeOcrCloud/Object/Underline.pm
 lib/AsposeOcrCloud/OcrApi.pm
+Makefile.PL
 MANIFEST
 README
 t/01_ocr_api.t
 t/data/Sampleocr.bmp
-Makefile.PL
+META.yml
+META.json

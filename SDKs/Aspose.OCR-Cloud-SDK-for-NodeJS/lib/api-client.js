@@ -11,7 +11,7 @@ var Multipart = require('./multipart').Multipart;
 var config = {
   'apiKey' : null,
   'appSid' : null,
-  'baseURI' : 'http://api.aspose.com/v1.1',
+  'baseURI' : 'http://api.aspose.cloud/v1.1',
   'debug' : false
 };
 
