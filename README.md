@@ -12,14 +12,14 @@ Aspose.OCR for Cloud is implemented as a REST API. If you use SDK, it hides the 
 
 Directory | Description
 --------- | -----------
-[Java SDK](SDKs/Aspose.OCR-Cloud-SDK-for-Java)  |  Aspose.OCR Cloud SDK for Java.
-[Android SDK](SDKs/Aspose.OCR-Cloud-SDK-for-Android) | Aspose.OCR Cloud SDK for Android.
-[PHP SDK](SDKs/Aspose.OCR-Cloud-SDK-for-PHP)  |  Aspose.OCR Cloud SDK for PHP.
-[Python SDK](SDKs/Aspose.OCR-Cloud-SDK-for-Python)  |  Aspose.OCR Cloud SDK for Python.
-[iOS SDK](/SDKs/Aspose.OCR-Cloud-SDK-for-Objective-C) | Aspose.OCR Cloud SDK for Objective C
-[Ruby SDK](SDKs/Aspose.OCR-Cloud-SDK-for-Ruby) |  Aspose.OCR Cloud SDK for Ruby.
-[Node.js SDK](SDKs/Aspose.OCR-Cloud-SDK-for-NodeJS) |  Aspose.OCR Cloud SDK for Node.js.
 [.NET SDK](SDKs/Aspose.OCR-Cloud-SDK-for-CSharp) |  Aspose.OCR Cloud SDK for CSharp.
+[Java SDK](SDKs/Aspose.OCR-Cloud-SDK-for-Java)  |  Aspose.OCR Cloud SDK for Java.
+[PHP SDK](SDKs/Aspose.OCR-Cloud-SDK-for-PHP)  |  Aspose.OCR Cloud SDK for PHP.
+[Ruby SDK](SDKs/Aspose.OCR-Cloud-SDK-for-Ruby) |  Aspose.OCR Cloud SDK for Ruby.
+[Python SDK](SDKs/Aspose.OCR-Cloud-SDK-for-Python)  |  Aspose.OCR Cloud SDK for Python.
+[Node.js SDK](SDKs/Aspose.OCR-Cloud-SDK-for-NodeJS) |  Aspose.OCR Cloud SDK for Node.js.
+[Android SDK](SDKs/Aspose.OCR-Cloud-SDK-for-Android) | Aspose.OCR Cloud SDK for Android.
+[Objective C SDK](/SDKs/Aspose.OCR-Cloud-SDK-for-Objective-C) | Aspose.OCR Cloud SDK for Objective C
 [Perl SDK](SDKs/Aspose.OCR-Cloud-SDK-for-Perl) |  Aspose.OCR Cloud SDK for Perl.
 
 ## Resources
