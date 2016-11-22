@@ -1,10 +1,10 @@
 # Aspose.OCR Cloud SDK For Ruby
 This SDK lets you use [Aspose Cloud OCR APIs](http://www.aspose.com/cloud/ocr-api.aspx) in your Ruby web apps.
 
-## Installing
-You can simply install Aspose OCR Cloud SDK with gem:
+## How to use the SDK?
 
-`gem install aspose_ocr_cloud`
+The complete source code is available in this repository folder, you can either directly use it in your project or use [Maven](http://maven.apache.org/). For more details, please visit our [documentation](http://www.aspose.com/docs/display/ocrcloud/Available+SDKs).
+
 
 ## Usage
 APIs of this SDK can be called as follows:
@@ -41,8 +41,6 @@ end
 ## Unit Tests
 Aspose OCR SDK includes a suite of unit tests within the [test](https://github.com/asposeocr/Aspose_OCR_Cloud/blob/master/SDKs/Aspose.OCR_Cloud_SDK_for_Ruby/test/ocr_tests.rb) subdirectory. These Unit Tests also serves as examples of how to use the Aspose OCR SDK.
 
-## Contact
-Your feedback is very important to us. Please email us all your queries and feedback at marketplace@aspose.com.
+##Contact Us
+Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://www.aspose.com/community/forums/).
 
-## License
-Aspose OCR SDK is available under the MIT license. See the [LICENSE](https://github.com/asposeocr/Aspose_OCR_Cloud/blob/master/SDKs/Aspose.OCR_Cloud_SDK_for_Ruby/LICENSE) file for more info.
