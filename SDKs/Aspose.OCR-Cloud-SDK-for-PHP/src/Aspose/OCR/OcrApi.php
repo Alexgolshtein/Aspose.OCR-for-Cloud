@@ -3,7 +3,7 @@
 namespace Aspose\OCR;
 
 use Aspose\OCR\ApiException as Exception;
-use Aspose\OCR\ApiClient;
+use Aspose\OCR\APIClient;
 
 class OcrApi {
 
