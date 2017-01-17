@@ -27,23 +27,23 @@ namespace CSharp.ExtractingManagingOCR.CloudStorage
             int? rectX = null;
             int? rectY = null;
 
-            //Set Width and Height to recognize text inside.
+            // Set Width and Height to recognize text inside.
             int? rectWidth = null;
             int? rectHeight = null;
 
-            //Set the spelling correction is used.
+            // Set the spelling correction is used.
             bool? useDefaultDictionaries = true;
 
-            //Set 3rd party cloud storage server (if any)
+            // Set 3rd party cloud storage server (if any)
             String storage = "";
             String folder = "";
 
             try
             {
-                //upload source file to aspose cloud storage
+                // Upload source file to aspose cloud storage
                 storageApi.PutCreate(name, "", "", System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-                // invoke Aspose.OCR Cloud SDK API to extract text and partsinfo from an image           
+                // Invoke Aspose.OCR Cloud SDK API to extract text and partsinfo from an image           
                 OCRResponse apiResponse = ocrApi.GetRecognizeDocument(name, language, rectX, rectY, rectWidth, rectHeight, useDefaultDictionaries, storage, folder); 
                
                 if (apiResponse != null)

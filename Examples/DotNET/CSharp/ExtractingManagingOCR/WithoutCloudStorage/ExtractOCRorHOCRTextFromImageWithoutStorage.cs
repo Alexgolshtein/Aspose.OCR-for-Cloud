@@ -10,7 +10,6 @@ namespace CSharp.ExtractingManagingOCR.WithoutCloudStorage
         {
 
             // ExStart:1
-
             // Instantiate Aspose OCR Cloud API SDK
             OcrApi ocrApi = new OcrApi(Common.APP_KEY, Common.APP_SID, Common.BASEPATH);
 
@@ -23,15 +22,15 @@ namespace CSharp.ExtractingManagingOCR.WithoutCloudStorage
             // Set the language of the document.
             String language = "english";
 
-            //Set the spelling correction is used.
+            // Set the spelling correction is used.
             bool? useDefaultDictionaries = true;
 
-            //Set the local file (if any)
+            // Set the local file (if any)
             byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + name);
 
             try
             {
-                // invoke Aspose.OCR Cloud SDK API to extract image text from URL           
+                // Invoke Aspose.OCR Cloud SDK API to extract image text from URL           
                 OCRResponse apiResponse = ocrApi.PostOcrFromUrlOrContent(url, language, useDefaultDictionaries, file); 
                
                 if (apiResponse != null)
