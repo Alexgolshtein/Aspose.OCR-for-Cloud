@@ -1,6 +1,6 @@
 require 'aspose_ocr_cloud'
 
-class ExtractOCRorHOCR
+class RecognizeText
 
   include AsposeOCRCloud
   include AsposeStorageCloud
@@ -16,7 +16,8 @@ class ExtractOCRorHOCR
     response = @storage_api.put_create(file_name, File.open("../../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def post_ocr_from_url_or_content
+  # Recognize image text from the request body content, language can be selected, default dictionaries can be used for correction.
+  def recognize_image_text_from_the_request_body
     file_name = "Sampleocr.bmp"
     language = "english"
     use_default_dictionaries = true
@@ -28,5 +29,5 @@ class ExtractOCRorHOCR
 
 end
 
-extractOCRorHOCR = ExtractOCRorHOCR.new()
-puts extractOCRorHOCR.post_ocr_from_url_or_content
+recognizeText = RecognizeText.new()
+puts recognizeText.recognize_image_text_from_the_request_body
