@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_ocr_cloud'
 
 class ExtractText
@@ -28,3 +29,4 @@ end
 
 extractText = ExtractText.new()
 puts extractText.get_recognize_document
+#ExEnd:

@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_ocr_cloud'
 
 class RecognizeText
@@ -31,3 +32,4 @@ end
 
 recognizeText = RecognizeText.new()
 puts recognizeText.recognize_image_text_from_the_request_body
+#ExEnd:

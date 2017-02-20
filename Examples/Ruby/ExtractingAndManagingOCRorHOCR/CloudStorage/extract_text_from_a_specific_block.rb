@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_ocr_cloud'
 
 class ExtractText
@@ -35,3 +36,4 @@ end
 
 extractText = ExtractText.new()
 puts extractText.extract_text_from_a_specific_block
+#ExEnd:
