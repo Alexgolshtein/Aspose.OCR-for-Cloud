@@ -15,13 +15,9 @@ class RecognizeText {
 		$this->ocrApi = new OcrApi();
 	}
 
-	public function recognizeImageTextFromTheRequestBody() {
-
-		//Set the image file name
-		$name = "Sampleocr.bmp";
-
-		//Set the image file url (if any)
-		$url = null;
+	public function recognizeImageTextFromURL() {
+		//Set the image file url
+		$url = "https://dl.dropboxusercontent.com/s/zj35mqdouoxy3rs/Sampleocr.bmp";
 
 		//Set the language of the document
 		$language = "English";
@@ -30,15 +26,15 @@ class RecognizeText {
 		$useDefaultDictionaries = true;
 
 		// Set local file (if any)
-		$file = realpath(__DIR__ . '/../../../..') . '/Data/' . $name;
+		$file = "empty.fle";
 
-		//invoke Aspose.OCR Cloud SDK API to extract image text from local file
+		//invoke Aspose.OCR Cloud SDK API to extract image text from file url
 		$response = $this->ocrApi->PostOcrFromUrlOrContent($url, $language, $useDefaultDictionaries, $file);
 		print_r ( $response );
 	}
 }
 
 $recognizeText = new RecognizeText();
-$recognizeText->recognizeImageTextFromTheRequestBody();
+$recognizeText->recognizeImageTextFromURL();
 
 ?>
