@@ -13,11 +13,11 @@ use AsposeOcrCloud::OcrApi;
 use AsposeOcrCloud::ApiClient;
 use AsposeOcrCloud::Configuration;
 
-my $configFile = '../../data/config.json';
+my $configFile = '../../Config/config.json';
 my $configPropsText = read_file($configFile);
 my $configProps = decode_json($configPropsText);
 
-my $data_path = '../../data/';
+my $data_path = '../../../../Data/';
 my $out_path = $configProps->{'out_folder'};;
 
 #ExStart:1
@@ -27,33 +27,33 @@ $AsposeOcrCloud::Configuration::debug = 1;
 $AsposeStorageCloud::Configuration::app_sid = $AsposeOcrCloud::Configuration::app_sid;
 $AsposeStorageCloud::Configuration::api_key = $AsposeOcrCloud::Configuration::api_key;
 
-#Instantiate Aspose.Storage API SDK 
+# Instantiate Aspose.Storage API SDK 
 my $storageApi = AsposeStorageCloud::StorageApi->new();
 
-#Instantiate Aspose.OCR API SDK
+# Instantiate Aspose.OCR API SDK
 my $ocrApi = AsposeOcrCloud::OcrApi->new();
 
-#Set the image file name
+# Set the image file name
 my $name = 'Sampleocr.bmp';
 
-#Set the language of the document
+# Set the language of the document
 my $language = 'English';
 
-#Set X and Y coordinate to recognize text inside
+# Set X and Y coordinate to recognize text inside
 my $rectX = 150;
 my $rectY = 100;
 
-#Set Width and Height to recognize text inside
+# Set Width and Height to recognize text inside
 my $rectWidth = 1000;
 my $rectHeight = 300;
 
-#Set the spelling correction is used
+# Set the spelling correction is used
 my $useDefaultDictionaries = 'true';
 
-#upload file to aspose cloud storage 
+# Upload file to aspose cloud storage 
 my $response = $storageApi->PutCreate(Path => $name, file => $data_path.$name);
 
-#invoke Aspose.OCR Cloud SDK API to extract text and partsinfo from an image                         
+# Invoke Aspose.OCR Cloud SDK API to extract text and partsinfo from an image                         
 $response = $ocrApi->GetRecognizeDocument(name=> $name, language=> $language, rectX=> $rectX, rectY=> $rectY, rectWidth=> $rectWidth, rectHeight=> $rectHeight, useDefaultDictionaries=> $useDefaultDictionaries);
 
 if($response->{'Status'} eq 'OK'){

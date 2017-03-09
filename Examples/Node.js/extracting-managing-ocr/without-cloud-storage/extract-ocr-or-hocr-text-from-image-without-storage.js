@@ -2,8 +2,8 @@ var fs = require('fs');
 var assert = require('assert');
 var OcrApi = require('asposeocrcloud');
 
-var configProps = require('../../Data/config.json');
-var data_path = '../../Data/';
+var configProps = require('../../Config/config.json');
+var data_path = '../../../../Data/';
 
 var AppSID = configProps.app_sid;
 var AppKey = configProps.api_key;

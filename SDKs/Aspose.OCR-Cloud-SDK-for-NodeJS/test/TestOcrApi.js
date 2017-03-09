@@ -6,7 +6,7 @@ var assert = require('assert');
 var AppSID = 'XXX'; //specify App SID
 var AppKey = 'XXX'; //specify App Key
 var config = {'appSid':AppSID,'apiKey':AppKey , 'debug' : true};
-var data_path = './data/';
+var data_path = '../../../Data/';
 
 var storageApi = new StorageApi(config); 
 var ocrApi = new OcrApi(config);

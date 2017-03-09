@@ -14,7 +14,7 @@ namespace CSharp
 
         public static string GetDataDir()
         {
-            var parent = Directory.GetParent(Directory.GetCurrentDirectory()).Parent;
+            var parent = ((Directory.GetParent(Directory.GetCurrentDirectory()).Parent).Parent).Parent;
             string startDirectory = null;
             if (parent != null)
             {

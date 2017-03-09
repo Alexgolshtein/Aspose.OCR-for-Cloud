@@ -23,7 +23,7 @@ namespace CSharp
             //// =====================================================
             //// =====================================================
 
-            //ExtractOCRorHOCRTextFromSpecificBlockImage.Run();
+            ExtractOCRorHOCRTextFromSpecificBlockImage.Run();
             //ExtractOCRorHOCRTextFromSpecificBlockImage.Run();
 
             //// =====================================================
@@ -33,7 +33,7 @@ namespace CSharp
             //// =====================================================
 
             //ExtractOCRorHOCRTextFromURLImage.Run();
-            ExtractOCRorHOCRTextFromImageWithoutStorage.Run();
+            //ExtractOCRorHOCRTextFromImageWithoutStorage.Run();
 
             // Stop before exiting
             Console.WriteLine("\n\nProgram Finished. Press any key to exit....");

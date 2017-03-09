@@ -88,7 +88,7 @@ namespace OCRTest
             string storage =  null;
             string folder =  null;
 
-            storageApi.PutCreate(name, "", "", System.IO.File.ReadAllBytes("\\temp\\ocr\\resources\\" + name));
+            storageApi.PutCreate(name, "", "", System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.OCR.Model.OCRResponse actual;
             actual = target.GetRecognizeDocument(name, language, rectX, rectY, rectWidth, rectHeight, useDefaultDictionaries, storage, folder);
@@ -110,7 +110,7 @@ namespace OCRTest
             string url =  null;
             string language = "english";
             bool?  useDefaultDictionaries=null;
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\ocr\\resources\\" + name);
+            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + name);
             
             Com.Aspose.OCR.Model.OCRResponse actual;
             actual = target.PostOcrFromUrlOrContent(url, language, useDefaultDictionaries, file);
