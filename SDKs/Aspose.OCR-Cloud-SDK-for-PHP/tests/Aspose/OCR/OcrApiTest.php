@@ -10,8 +10,10 @@ class OcrApiTest extends PHPUnit_Framework_TestCase {
 
     protected function setUp()
     {        
+        AsposeApp::$appSID = "";
+        AsposeApp::$apiKey = "";
         $this->ocr = new OcrApi();
-	$this->storageApi = new StorageApi();
+	    $this->storageApi = new StorageApi();
     }
     
     public function testGetRecognizeDocument()
@@ -26,7 +28,7 @@ class OcrApiTest extends PHPUnit_Framework_TestCase {
         $storage = "";
         $folder = "";
 	
-	$result = $this->storageApi->PutCreate($name, "", $storage = "", getcwd() . '\\Data\\Input\\' . $name);
+	$result = $this->storageApi->PutCreate($name, "", $storage = "", getcwd(). '/../../../Data/' . $name);
         
         $result = $this->ocr->GetRecognizeDocument($name, $language, $rectX, $rectY, $rectWidth, $rectHeight, $useDefaultDictionaries, $storage, $folder);
         $this->assertEquals(200, $result->Code);
