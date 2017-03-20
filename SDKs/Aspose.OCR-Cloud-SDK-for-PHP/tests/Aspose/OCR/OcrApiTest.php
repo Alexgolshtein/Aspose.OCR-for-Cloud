@@ -1,6 +1,7 @@
 <?php
 
 use Aspose\OCR\OcrApi;
+use Aspose\OCR\AsposeApp;
 use Aspose\Storage\StorageApi;
 
 class OcrApiTest extends PHPUnit_Framework_TestCase {
@@ -28,11 +29,11 @@ class OcrApiTest extends PHPUnit_Framework_TestCase {
         $storage = "";
         $folder = "";
 	
-	$result = $this->storageApi->PutCreate($name, "", $storage = "", getcwd(). '/../../../Data/' . $name);
+	    $result = $this->storageApi->PutCreate($name, "", $storage = "", getcwd(). '/../../../Data/' . $name);
         
         $result = $this->ocr->GetRecognizeDocument($name, $language, $rectX, $rectY, $rectWidth, $rectHeight, $useDefaultDictionaries, $storage, $folder);
         $this->assertEquals(200, $result->Code);
-	$this->assertInstanceOf('\Aspose\OCR\Models\OCRResponse', $result);
+	    $this->assertInstanceOf('\Aspose\OCR\Models\OCRResponse', $result);
     }
     
     public function testPostOcrFromUrlOrContent()
