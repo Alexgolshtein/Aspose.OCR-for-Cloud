@@ -1,3 +1,4 @@
+//ExStart:
 <?php
 require_once realpath(__DIR__ . '/../..') . '/vendor/autoload.php';
 require_once realpath(__DIR__ . '/../..') . '/Utils.php';
@@ -52,3 +53,4 @@ $extractText = new ExtractText();
 $extractText->extractTextFromImages();
 
 ?>
+//ExEnd:

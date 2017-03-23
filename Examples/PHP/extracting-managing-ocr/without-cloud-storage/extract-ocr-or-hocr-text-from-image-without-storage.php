@@ -1,3 +1,4 @@
+//ExStart:
 <?php
 require_once realpath(__DIR__ . '/../..') . '/vendor/autoload.php';
 require_once realpath(__DIR__ . '/../..') . '/Utils.php';
@@ -42,3 +43,4 @@ $recognizeText = new RecognizeText();
 $recognizeText->recognizeImageTextFromTheRequestBody();
 
 ?>
+//ExEnd:
