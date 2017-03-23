@@ -21,6 +21,7 @@
 }
 
 - (void)recognizeImageTextFromURL {
+//ExStart:RecognizeImageTextFromURL
     
     //Set the image file url
     NSString *url = @"https://dl.dropboxusercontent.com/s/zj35mqdouoxy3rs/Sampleocr.bmp";
@@ -32,9 +33,11 @@
                                           completionHandler:^(ASPOCRResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:RecognizeImageTextFromURL
 }
 
 - (void)recognizeImageTextFromTheRequestBody {
+//ExStart:RecognizeImageTextFromTheRequestBody
     
     NSURL *pathToFile = [[NSBundle mainBundle] URLForResource:@"Sampleocr" withExtension:@"bmp"];
     
@@ -45,6 +48,7 @@
                                           completionHandler:^(ASPOCRResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:RecognizeImageTextFromTheRequestBody
 }
 
 

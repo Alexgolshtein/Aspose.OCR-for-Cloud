@@ -21,6 +21,7 @@
 }
 
 - (void)extractTextFromImages {
+//ExStart:ExtractTextFromImages
     NSString *fileName = @"Sampleocr.bmp";
     [Utils uploadFile:fileName];
     
@@ -36,9 +37,11 @@
                                        completionHandler:^(ASPOCRResponse *output, NSError *error) {
                                            NSLog(@"%@", output);
                                        }];
+//ExEnd:ExtractTextFromImages
 }
 
 - (void)extractOCROrHOCRTextFromASpecificBlock {
+//ExStart:ExtractOCROrHOCRTextFromASpecificBlock
     NSString *fileName = @"Sampleocr.bmp";
     [Utils uploadFile:fileName];
     
@@ -54,6 +57,7 @@
                                        completionHandler:^(ASPOCRResponse *output, NSError *error) {
                                            NSLog(@"%@", output);
                                        }];
+//ExEnd:ExtractOCROrHOCRTextFromASpecificBlock
 }
 
 @end
