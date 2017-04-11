@@ -1,1 +1,1 @@
-include ':app', ':aspose-cloud-ocr-android'
+include ':app', ':Aspose-OCR-Cloud-SDK-for-Android', ':Aspose.Storage-Cloud-SDK-for-Android'

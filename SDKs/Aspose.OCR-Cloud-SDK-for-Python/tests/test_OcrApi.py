@@ -33,7 +33,7 @@ class TestAsposeOcrCloud(unittest.TestCase):
         try:
             name =  "Sampleocr.bmp"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.ocrApi.GetRecognizeDocument(name)
             
             self.assertIsInstance(response,OCRResponse.OCRResponse)
@@ -50,7 +50,7 @@ class TestAsposeOcrCloud(unittest.TestCase):
         try:
             name =  "Sampleocr.bmp"
             
-            response = self.ocrApi.PostOcrFromUrlOrContent(file = './data/' + name, language = "english")            
+            response = self.ocrApi.PostOcrFromUrlOrContent(file = '../../../Data/' + name, language = "english")            
             
             self.assertIsInstance(response,OCRResponse.OCRResponse)
             self.assertEqual(response.Status,'OK')

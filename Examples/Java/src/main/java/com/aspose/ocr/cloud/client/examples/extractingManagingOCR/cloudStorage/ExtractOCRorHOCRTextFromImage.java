@@ -1,11 +1,10 @@
 package com.aspose.ocr.cloud.client.examples.extractingManagingOCR.cloudStorage;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
+import java.nio.file.Path;
 
 import com.aspose.ocr.api.OcrApi;
+import com.aspose.ocr.cloud.client.examples.Configuration;
+import com.aspose.ocr.cloud.client.examples.Utils;
 import com.aspose.ocr.model.OCRResponse;
 import com.aspose.storage.api.StorageApi;
 
@@ -17,44 +16,14 @@ public class ExtractOCRorHOCRTextFromImage {
 
 	public static void main(String[] args) {
 
-		Properties prop = new Properties();
-		String propFileName = "config.properties";
-		// App SID
-		String appSID = "";
-		// App Key
-		String apiKey = "";
-		// output folder
-		String outFolder = "c:\\temp\\";
-
-		InputStream inputStream = ExtractOCRorHOCRTextFromImage.class
-				.getClassLoader().getResourceAsStream(propFileName);
-		try {
-			if (inputStream != null) {
-				prop.load(inputStream);
-				appSID = prop.getProperty("app_sid");
-				apiKey = prop.getProperty("api_key");
-				outFolder = prop.getProperty("out_folder");
-
-			} else {
-				System.out.println("property file '" + propFileName
-						+ "' not found in the classpath");
-				System.exit(1);
-			}
-		} catch (IOException ioe) {
-			System.out.println("property file '" + propFileName
-					+ "' not found in the classpath");
-			ioe.printStackTrace();
-			System.exit(1);
-		}
-
 		// ExStart:1
 		try {
 
 			// Instantiate Aspose Storage Cloud API SDK
-			StorageApi storageApi = new StorageApi(apiKey, appSID, true);
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
 			// Instantiate Aspose OCR Cloud API SDK
-			OcrApi ocrApi = new OcrApi(apiKey, appSID, true);
+			OcrApi ocrApi = new OcrApi(Configuration.apiKey, Configuration.appSID, true);
 
             // Set the image file name 
 			String fileName = "Sampleocr.bmp";
@@ -79,8 +48,11 @@ public class ExtractOCRorHOCRTextFromImage {
 			// Set folder location at cloud storage
 			String folder = "";
 
+	         Path path=Utils.getPath(ExtractOCRorHOCRTextFromImage.class, fileName);
+
+			
 			//upload file to aspose cloud storage
-			  storageApi.PutCreate(fileName, "", "", new File(ExtractOCRorHOCRTextFromImage.class.getResource("/" + fileName).toURI()));
+			  storageApi.PutCreate(fileName, "", "",path.toFile());
 			  
 			//invoke Aspose.OCR Cloud SDK API to extract text and partsinfo from an image           
 			 OCRResponse apiResponse = ocrApi.GetRecognizeDocument(fileName, language, rectX, rectY, rectWidth, rectHeight, useDefaultDictionaries, storage, folder);   
@@ -95,7 +67,7 @@ public class ExtractOCRorHOCRTextFromImage {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		// ExEnd:1
+		// ExEnd:ExtractOCRorHOCRTextFromImage
 	}
 
 }

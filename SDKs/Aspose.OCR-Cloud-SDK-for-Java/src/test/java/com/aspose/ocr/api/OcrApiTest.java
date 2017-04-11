@@ -7,6 +7,8 @@ package com.aspose.ocr.api;
 import static org.junit.Assert.assertNull;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -26,6 +28,16 @@ public class OcrApiTest {
 	OcrApi ocrApi;
 	String appSID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
 	String apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+	
+	private static Path getPath(Class example, String filename) {
+		final File f = new File(example.getProtectionDomain().getCodeSource().getLocation().getPath());
+		String path = f.getAbsolutePath();
+		int subPathIndex = path.indexOf("Examples");
+		String subPath = path.substring(0, subPathIndex) + "Data/" + filename;
+
+		Path p = Paths.get(subPath);
+		return p;
+	}
 	
 	public OcrApiTest() {
 	}
@@ -84,13 +96,11 @@ public class OcrApiTest {
 		File file;
 
 		try{
-			file = new File(getClass().getResource("/Sampleocr.bmp").toURI());
+			file =getPath(OcrApiTest.class, "Sampleocr.bmp").toFile();
 			OCRResponse result = ocrApi.PostOcrFromUrlOrContent("http://s017.radikal.ru/i406/1202/7b/70183bef7a09.jpg", language, useDefaultDictionaries, file);
 		}catch(ApiException apiExp){
 			System.out.println("exp:" + apiExp.getMessage());
 			assertNull(apiExp);
-		}catch(java.net.URISyntaxException uriExp){
-			System.out.println("uri exp:"+uriExp);
 		}
 
 	}
