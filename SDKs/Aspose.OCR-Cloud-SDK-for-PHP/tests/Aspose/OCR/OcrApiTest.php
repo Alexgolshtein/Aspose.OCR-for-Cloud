@@ -1,17 +1,19 @@
 <?php
 
+require_once realpath(__DIR__) . '/Utils.php';
+
 use Aspose\OCR\OcrApi;
-use Aspose\Storage\StorageApi;
+use Aspose\OCR\AsposeApp;
 
 class OcrApiTest extends PHPUnit_Framework_TestCase {
     
     protected $ocr;
-    protected $storageApi;
 
     protected function setUp()
     {        
+        AsposeApp::$appSID = Utils::appSID;
+        AsposeApp::$apiKey = Utils::apiKey;
         $this->ocr = new OcrApi();
-	$this->storageApi = new StorageApi();
     }
     
     public function testGetRecognizeDocument()
@@ -26,11 +28,11 @@ class OcrApiTest extends PHPUnit_Framework_TestCase {
         $storage = "";
         $folder = "";
 	
-	$result = $this->storageApi->PutCreate($name, "", $storage = "", getcwd() . '\\Data\\Input\\' . $name);
+	    Utils::uploadFile($name);
         
         $result = $this->ocr->GetRecognizeDocument($name, $language, $rectX, $rectY, $rectWidth, $rectHeight, $useDefaultDictionaries, $storage, $folder);
         $this->assertEquals(200, $result->Code);
-	$this->assertInstanceOf('\Aspose\OCR\Models\OCRResponse', $result);
+	    $this->assertInstanceOf('\Aspose\OCR\Models\OCRResponse', $result);
     }
     
     public function testPostOcrFromUrlOrContent()
@@ -42,7 +44,7 @@ class OcrApiTest extends PHPUnit_Framework_TestCase {
         
         $result = $this->ocr->PostOcrFromUrlOrContent($url, $language, $useDefaultDictionaries, $file);
         $this->assertEquals(200, $result->Code);
-	$this->assertInstanceOf('\Aspose\OCR\Models\OCRResponse', $result);
+	    $this->assertInstanceOf('\Aspose\OCR\Models\OCRResponse', $result);
     }
                          
 }    
