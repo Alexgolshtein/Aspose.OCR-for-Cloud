@@ -92,7 +92,16 @@ ___________________________
 [.NET](SDKs/Aspose.OCR-Cloud-SDK-for-CSharp)
 
 ## Examples
+```csharp
+// Upload file using storage API
+OcrApi ocrApi = new OcrApi(APIKEY, APPSID, BASEPATH);
+IOcrV2Api ocrApiV2 = new OcrV2Api(APIKEY, APPSID, BASEPATH);
+StorageApi storageApi = new StorageApi(APIKEY, APPSID, BASEPATH);
+ResponseMessage putCreateResponse = storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Path.Combine(DataFolder, name)));
 
+// Recognize using OCR Cloud API
+OCRResponse ocrResponseV2 = ocrApiV2.OcrV2GetRecognizeDocument(name, null, null);
+```
 
 ## Roadmap
 
