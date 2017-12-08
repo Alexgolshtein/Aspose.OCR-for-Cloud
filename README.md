@@ -1,11 +1,7 @@
 <html style="background:none;">
 <div>
   <div class="top" style="margin-left:auto;
-  margin-right:auto;
-  width:100%;
-  padding:10px;
-  background: url(https://cms.asposeptyltd.com/templates/aspose/App_Themes/V3/images/bg/header1.png)  repeat-y;
-  # background-size: contain;">
+  margin-right:auto;  width:100%;  padding:10px;  background: url(https://cms.asposeptyltd.com/templates/aspose/App_Themes/V3/images/bg/header1.png);repeat-y;">
     <div style="float:left; width:70%; color: white">
       <h3 style="font-size: 250%; margin-left:2rem; margin-top:1%;">
         Perform OCR on images anywhere, any platform
@@ -13,24 +9,9 @@
       <div class="menu" style="width:100%;
   height:30px;
   margin:24px 0px 0px 33px;">
-          <div class='btn' style="float:left;
-  height: 100%;
-  color: white;
-  margin: 1px;
-  text-align:center; background-color:#f1c40f; border-color:#eea236;"><div style="padding:3px 15px 5px 15px;
-  font-weight:700;">Free Trial</div></div>
-          <div class='btn' style="float:left;
-  height: 100%;
-  color: white;
-  margin: 1px;
-  text-align:center; background-color:#29c26a; border-color:#4cae4c;"><div style="padding:3px 15px 5px 15px;
-  font-weight:700;">Learn</div></div>
-          <div class='btn' style="float:left;
-  height: 100%;
-  color: white;
-  margin: 1px;
-  text-align:center; background-color:#323e80; border-color:#darkblue;"><div style="padding:3px 15px 5px 15px;
-  font-weight:700;">Buy</div></div>
+          <div class='btn' style="float:left;height: 100%;color: white; margin: 1px;  text-align:center;background-color:#f1c40f;border-color:#eea236;"><div style="padding:3px 15px 5px 15px; font-weight:700;">Free Trial</div></div>
+          <div class='btn' style="float:left;  height: 100%;  color: white;  margin: 1px;  text-align:center; background-color:#29c26a; border-color:#4cae4c;"><div style="padding:3px 15px 5px 15px;  font-weight:700;">Learn</div></div>
+          <div class='btn' style="float:left;  height: 100%;  color: white;  margin: 1px;  text-align:center; background-color:#323e80; border-color:#darkblue;"><div style="padding:3px 15px 5px 15px;  font-weight:700;">Buy</div></div>
       </div>
     </div>
     <div style="float:right; width:30%; max-width:170px;">
