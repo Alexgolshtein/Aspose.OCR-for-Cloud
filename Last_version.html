@@ -1,0 +1,3633 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mg="http://www.araxis.com/2002/Merge/Reporting" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<!--The layout and design of this report is Copyright © 2003-2017 Araxis Ltd. All rights reserved.-->
+<!--The copyright of the data content of this report belongs to the relevant copyright holders.-->
+<title>Araxis Merge File Comparison Report</title>
+<style type="text/css">
+body { background: #fff;  color: #000; margin: 0px 14px 14px 14px; }
+h1, h2, h3, h4, h5 {
+  padding: 0em;
+  margin: 1.5em 0em .25em 0em;
+  text-align: left;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 70%;
+  max-width: 55em;
+}
+body, h4, h5, p, ol, ul, li, td, th { font-family: Verdana, Arial, Helvetica, sans-serif; text-align: left; }
+
+h4, h5, p, ol, ul, li { font-size: 70%; }
+input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 120%;
+}
+
+h1 { margin: 14px 0em 1.2em 0em; font-size: 112%; line-height: 130%;}
+h2 { font-size: 125%; line-height: 84%;}
+h3 { margin-top: 1.4em; font-size: 81%; }
+h4 { margin-top: 1em; font-size: 70%; }
+h5 { margin-top: 1em; font-size: 100%; font-style: italic;}
+h1 strong, h2 strong, h3 strong, h4 strong { font-weight: bold; }
+
+p { margin: 6px 0em 6px 0em; max-width: 55em;}
+p.code, code {}
+p { font-size: 70%; line-height: 125%; }
+table { font-size: 70%;}
+
+p.copyright, .small { font-size: 60%; line-height: 120%; }
+p.copyright { margin: 3px 0px 0px 0px; padding: 0px; text-align: left; }
+acronym { font-variant: small-caps; }
+div.pad { padding: 3px; }
+span.lineEndings { color: red; font-size: 70%; }
+
+table.mgRowGroup, table.mgRowGroupFolder { border: 1px solid #a0a0a0; margin: 10px 0px 10px 0px; width: 100%; table-layout: fixed; border-collapse: collapse; }
+table.mgRowGroup td { vertical-align: top; padding: 0; }
+table.mgRowGroupFolder td { vertical-align: top; padding: 1px 0 1px 0; }
+div.IP { width: 2px; height: 1em; float: left; }
+
+img.mgFldrIcon {float: left; text-align: left; margin: -1px 2px 0px 0px;  height: 16px; width: 16px; border: none; vertical-align: top; background-color: transparent;}
+div.mgFldrIcon {float: left; width: auto;}
+span.left {float: left;width: auto;}
+span.right {float: right;width: auto;}
+
+table.bordered { border-collapse: collapse; border: 1px solid #a0a0a0; margin: 10px 0px 10px 0px;}
+table.bordered th, table.bordered td { vertical-align: top; padding: 3px; border: 1px solid #a0a0a0;}
+table.bordered th { background-color: #e5e5e5; }
+table.bordered td.group { background-color: #f5f5f5; }
+span.disabledNavigation { color: #a0a0a0; }
+div.navigation { margin-top: 14px; font-size: 70%; }
+div.comment { font-weight: normal; color: #000; font-family: Verdana, Arial, Helvetica, sans-serif; background-color: #fcfed8; padding: 2px 5px 2px 5px; border: 1px solid #E3E5C3; margin: 1px 2px 3px 2px; -moz-border-radius: 7px; border-radius: 7px; }
+
+                span.U1, span.U1 a {float: left; width: auto;color: #000000; background-color: #FFFFFF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.U1 a {text-decoration: underline;}
+td.U1 {color: #000000; background-color: #FFFFFF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.R1, span.R1 a {float: left; width: auto;color: #800000; background-color: #F3E6D8; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.R1 a {text-decoration: underline;}
+td.R1 {color: #800000; background-color: #F3E6D8; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.I1, span.I1 a {float: left; width: auto;color: #800000; background-color: #D1E8CF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.I1 a {text-decoration: underline;}
+td.I1 {color: #800000; background-color: #D1E8CF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.C1, span.C1 a {float: left; width: auto;color: #800000; background-color: #DACDE6; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.C1 a {text-decoration: underline;}
+td.C1 {color: #800000; background-color: #DACDE6; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+td.nbgC1 {color: #800000; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; background-color: #FFFFFF; }
+span.U2, span.U2 a {float: left; width: auto;color: #000000; background-color: #FFFFFF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.U2 a {text-decoration: underline;}
+td.U2 {color: #000000; background-color: #FFFFFF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.R2, span.R2 a {float: left; width: auto;color: #800000; background-color: #F3E6D8; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.R2 a {text-decoration: underline;}
+td.R2 {color: #800000; background-color: #F3E6D8; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.I2, span.I2 a {float: left; width: auto;color: #800000; background-color: #D1E8CF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.I2 a {text-decoration: underline;}
+td.I2 {color: #800000; background-color: #D1E8CF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.C2, span.C2 a {float: left; width: auto;color: #800000; background-color: #DACDE6; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.C2 a {text-decoration: underline;}
+td.C2 {color: #800000; background-color: #DACDE6; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+td.nbgC2 {color: #800000; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; background-color: #FFFFFF; }
+
+span.selected {background-color: #3d80df; color: #fff;}
+span.selected a {background-color: #3d80df; color: #fff; text-decoration: underline;}
+span.symbol {cursor: pointer;}
+      </style>
+</head>
+<body>
+<h1><strong>Araxis Merge File Comparison Report</strong></h1>
+<p>Produced by <strong>Araxis Merge</strong> on <strong>12/20/2017 12:35:57 PM</strong>. See <a href="https://www.araxis.com/" title="Link to the Araxis corporate web site">www.araxis.com</a> for information about Merge. This report uses XHTML and CSS2, and is best viewed with a modern standards-compliant browser. For optimum results when printing this report, use landscape orientation and enable printing of background images and colours in your browser.</p>
+<h3><strong>1. Files compared</strong></h3>
+<table class="bordered">
+<tr>
+<th>#</th>
+<th>Location</th>
+<th>File</th>
+<th>Last Modified</th>
+</tr>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td>Wed Dec 20 10:06:18 2017 UTC</td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td>Wed Dec 20 10:06:18 2017 UTC</td>
+</tr>
+</table>
+<h3><strong>2. Comparison summary</strong></h3>
+<table class="bordered">
+<tr>
+<th rowspan="2" style="vertical-align: bottom;">Description</th>
+<th colspan="2">Between<br />Files 1 and 2</th>
+</tr>
+<tr>
+<th style="text-align: right;">Text Blocks</th>
+<th style="text-align: right;">Lines</th>
+</tr>
+<tr>
+<td>Unchanged</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr>
+<td>Changed</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr>
+<td>Inserted</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Removed</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+</table>
+<h3><strong>3. Comparison options</strong></h3>
+<table class="bordered" style="width: 55em;">
+<tr>
+<th>Whitespace</th>
+<td>All differences in whitespace within lines are ignored<br /></td>
+</tr>
+<tr>
+<th>Character case</th>
+<td>Differences in character case are significant</td>
+</tr>
+<tr>
+<th>Line endings</th>
+<td>Differences in line endings (<code>CR</code> and <code>LF</code> characters) are ignored</td>
+</tr>
+<tr>
+<th>CR/LF characters</th>
+<td>Not shown in the comparison detail</td>
+</tr>
+</table>
+<h3><strong>4. Active regular expressions</strong></h3>
+<p>No regular expressions were active.</p>
+<h3><strong>5. Comparison detail</strong></h3>
+<table class="mgRowGroup">
+<col style="width: 5em;" />
+<col style="width: 1em;" />
+<col width="*" />
+<col style="width: 1em;" />
+<col style="width: 5em;" />
+<col style="width: 1em;" />
+<col width="*" />
+<tr>
+<td class="C1 ln-no" style="text-align: right;">1</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">Fed</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">sat</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">down</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">at</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">table</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">flipped</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">one</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">goggl</span>
+<span class="C1">c</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">cup</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">over</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">his</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">ey</span>
+<span class="C1">c</span>
+<span class="U1">brow,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">his</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">other</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">hand</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">keying</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">in</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">combinatio</span>
+<span class="U1">n</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">for</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">1</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">Fed</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">sat</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">down</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">at</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">table</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">flipped</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">one</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">goggl</span>
+<span class="C2">e</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">cup</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">over</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">his</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">ey</span>
+<span class="C2">e</span>
+<span class="U2">brow,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">his</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">other</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">hand</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">keying</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">in</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">combinatio</span>
+<span class="U2">n</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">for</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">2</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">single-han</span>
+<span class="U1">ded&nbsp;chordi</span>
+<span class="U1">ng.&nbsp;</span>
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">2</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;single-ha</span>
+<span class="U2">nded&nbsp;chord</span>
+<span class="U2">ing.</span>
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">3</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">"No</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">computers</span>
+<span class="C1">,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Fed"</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">his</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Mom</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">said.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">"How</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">about</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">we</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">just</span>
+<span class="U1">&nbsp;</span>
+<span class="C1">c</span>
+<span class="U1">njoy</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">each</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">others'</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">company?"</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">3</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">"No</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">computers</span>
+<span class="C2">.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Fed"</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">his</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Mom</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">said.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">"How</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">about</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">we</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">just</span>
+<span class="U2">&nbsp;</span>
+<span class="C2">e</span>
+<span class="U2">njoy</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">each</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">others'</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">company?"</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">4</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">Fed's&nbsp;jawb</span>
+<span class="U1">one&nbsp;tighte</span>
+<span class="U1">ned,&nbsp;slowl</span>
+<span class="U1">y&nbsp;recogniz</span>
+<span class="U1">ing&nbsp;the&nbsp;si</span>
+<span class="U1">gns&nbsp;that&nbsp;M</span>
+<span class="U1">om's&nbsp;antid</span>
+<span class="U1">epressants</span>
+<span class="U1">&nbsp;were&nbsp;hitt</span>
+<span class="U1">ing&nbsp;the&nbsp;ha</span>
+<span class="U1">lf-life&nbsp;wa</span>
+<span class="U1">ll&nbsp;and&nbsp;</span>
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">4</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;Fed's&nbsp;jaw</span>
+<span class="U2">bone&nbsp;tight</span>
+<span class="U2">ened,&nbsp;slow</span>
+<span class="U2">ly&nbsp;recogni</span>
+<span class="U2">zing&nbsp;the&nbsp;s</span>
+<span class="U2">igns&nbsp;that&nbsp;</span>
+<span class="U2">Mom's&nbsp;anti</span>
+<span class="U2">depressant</span>
+<span class="U2">s&nbsp;were&nbsp;hit</span>
+<span class="U2">ting&nbsp;the&nbsp;h</span>
+<span class="U2">alf-life&nbsp;w</span>
+<span class="U2">all&nbsp;and</span>
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">5</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">that</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">another</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">round</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">of</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">emotional</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">trauma</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">was</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">coming</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">due.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">"Enjoying</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">each</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">other's</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">company"</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">was</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">practicall</span>
+<span class="U1">y</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">code</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">word</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">for</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">5</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">that</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">another</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">round</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">of</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">emotional</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">trauma</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">was</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">coming</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">due.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">"Enjoying</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">each</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">other's</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">company"</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">was</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">practicall</span>
+<span class="U2">y</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">code</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">word</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">for</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">6</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">months</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">ofrepresse</span>
+<span class="U1">d</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">guilt</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">anxi</span>
+<span class="C1">c</span>
+<span class="U1">ty</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">sloshing</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">h</span>
+<span class="C1">c</span>
+<span class="U1">avily</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">against</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">floodgates</span>
+<span class="U1">,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">held</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">back</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">by</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">carefully-</span>
+<span class="R1">-</span>
+<span class="U1">wrough</span>
+<span class="R1">i</span>
+<span class="U1">t</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">"producivi</span>
+<span class="U1">ty</span>
+<span class="R1">.</span>
+<span class="U1">"</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">6</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">months</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">of</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">repressed</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">guilt</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">anxi</span>
+<span class="C2">e</span>
+<span class="U2">ty</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">sloshing</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">h</span>
+<span class="C2">e</span>
+<span class="U2">avily</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">against</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">floodgates</span>
+<span class="U2">,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">held</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">back</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">by</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">carefully-</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">wrough</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">t</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">"producivi</span>
+<span class="U2">ty</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">"</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">7</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">subliminal</span>
+<span class="U1">s&nbsp;at&nbsp;work&nbsp;</span>
+<span class="U1">and&nbsp;the&nbsp;cr</span>
+<span class="U1">ufty&nbsp;remai</span>
+<span class="U1">ns&nbsp;of&nbsp;his&nbsp;</span>
+<span class="U1">mother's&nbsp;n</span>
+<span class="U1">euro-reupt</span>
+<span class="U1">ake&nbsp;inhibi</span>
+<span class="U1">tors.&nbsp;Fed&nbsp;</span>
+<span class="U1">flicked&nbsp;ba</span>
+<span class="U1">ck&nbsp;the&nbsp;oth</span>
+<span class="U1">er&nbsp;cup&nbsp;of&nbsp;</span>
+<span class="U1">his&nbsp;</span>
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">7</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;sublimina</span>
+<span class="U2">ls&nbsp;at&nbsp;work</span>
+<span class="U2">&nbsp;and&nbsp;the&nbsp;c</span>
+<span class="U2">rufty&nbsp;rema</span>
+<span class="U2">ins&nbsp;of&nbsp;his</span>
+<span class="U2">&nbsp;mother's&nbsp;</span>
+<span class="U2">neuro&nbsp;-reu</span>
+<span class="U2">ptake&nbsp;inhi</span>
+<span class="U2">bitors.&nbsp;Fe</span>
+<span class="U2">d&nbsp;flicked&nbsp;</span>
+<span class="U2">back&nbsp;the&nbsp;o</span>
+<span class="U2">ther&nbsp;cup&nbsp;o</span>
+<span class="U2">f&nbsp;his</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">8</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">goggles&nbsp;an</span>
+<span class="U1">d&nbsp;let&nbsp;the&nbsp;</span>
+<span class="U1">scattered&nbsp;</span>
+<span class="U1">light&nbsp;show</span>
+<span class="U1">&nbsp;flicker&nbsp;o</span>
+<span class="U1">ut&nbsp;and&nbsp;acr</span>
+<span class="U1">oss&nbsp;their&nbsp;</span>
+<span class="U1">faces,&nbsp;tin</span>
+<span class="U1">y&nbsp;glimmers</span>
+<span class="U1">&nbsp;of&nbsp;blue&nbsp;a</span>
+<span class="U1">nd&nbsp;red&nbsp;and</span>
+<span class="U1">&nbsp;green&nbsp;las</span>
+<span class="U1">er&nbsp;light&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">8</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;goggles&nbsp;a</span>
+<span class="U2">nd&nbsp;let&nbsp;the</span>
+<span class="U2">&nbsp;scattered</span>
+<span class="U2">&nbsp;light&nbsp;sho</span>
+<span class="U2">w&nbsp;flicker&nbsp;</span>
+<span class="U2">out&nbsp;and&nbsp;ac</span>
+<span class="U2">ross&nbsp;their</span>
+<span class="U2">&nbsp;faces,&nbsp;ti</span>
+<span class="U2">ny&nbsp;glimmer</span>
+<span class="U2">s&nbsp;of&nbsp;blue&nbsp;</span>
+<span class="U2">and&nbsp;red&nbsp;an</span>
+<span class="U2">d&nbsp;green&nbsp;la</span>
+<span class="U2">ser&nbsp;light</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">9</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">pulsing</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">softly</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">against</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">their</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">cheeks</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">as</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">it</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">tried</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">to</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">resolve</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">on</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">cornea,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">any</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">cornea</span>
+<span class="C1">,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">He</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">key</span>
+<span class="C1">c</span>
+<span class="U1">d</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">in</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">locking</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">sequence</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">9</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">pulsing</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">softly</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">against</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">their</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">cheeks</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">as</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">it</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">tried</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">to</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">resolve</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">on</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">cornea,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">any</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">cornea</span>
+<span class="C2">.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">He</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">key</span>
+<span class="C2">e</span>
+<span class="U2">d</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">in</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">locking</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">sequence</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">10</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">pocketed</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">chord,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">bending</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">over</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">soy</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">patty</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">to</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">industrial</span>
+<span class="U1">ly</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">cut</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">it</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">into</span>
+<span class="U1">&nbsp;</span>
+<span class="C1">c</span>
+<span class="U1">asily-stac</span>
+<span class="U1">kable</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">bite-</span>
+<span class="R1">-</span>
+<span class="U1">sized</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">chunks.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">10</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">pocketed</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">chord,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">bending</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">over</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">soy</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">patty</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">to</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">industrial</span>
+<span class="U2">ly</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">cut</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">it</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">into</span>
+<span class="U2">&nbsp;</span>
+<span class="C2">e</span>
+<span class="U2">asily-stac</span>
+<span class="U2">kable</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">bite-</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">sized</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">chunks.</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">11</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">"My</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">muscleman</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">loves</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">this</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">shit"</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Bark</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">said</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">"Gave</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">me</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">total</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">discount</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">on</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">ab</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">work</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">I</span>
+<span class="R1">I</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">was</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">showing</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">you."</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">He</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">followed</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">11</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">"My</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">muscleman</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">loves</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">this</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">shit"</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Bark</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">said</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">"Gave</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">me</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">total</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">discount</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">on</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">ab</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">work</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">I</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">was</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">showing</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">you."</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">He</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">followed</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">12</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">this</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">with</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">wink</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">to</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Fed's</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">mom</span>
+<span class="R1">,</span>
+<span class="U1">.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Bark</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">paid</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">precious</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">money</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">to</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">have</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">his</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">sedentary</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">lifestyle</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">painstakin</span>
+<span class="U1">gly</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">smoothed</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">away</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">12</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">this</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">with</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">wink</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">to</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Fed's</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">mom</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Bark</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">paid</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">precious</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">money</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">to</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">have</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">his</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">sedentary</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">lifestyle</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">painstakin</span>
+<span class="U2">gly</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">smoothed</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">away</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">13</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">through</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">an</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">injected</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">cocktails</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">ofhormones</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="C1">c</span>
+<span class="U1">lectolytic</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">equivelant</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">of</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">battery</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">charge,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">individual</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">muscle</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">groups</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">13</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">through</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">an</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">injected</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">cocktails</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">of</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">hormones</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="C2">e</span>
+<span class="U2">lectolytic</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">equivelant</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">of</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">battery</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">charge,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">individual</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">muscle</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">groups</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">14</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">drugged</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">brainwashe</span>
+<span class="U1">d</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">into</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">thinking</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">they'd</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">been</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">working</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">very</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">hard</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">for</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">weeks.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">As</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">result</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Bark's</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">body</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">had</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">look</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">of</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">14</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">drugged</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">brainwashe</span>
+<span class="U2">d</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">into</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">thinking</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">they'd</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">been</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">working</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">very</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">hard</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">for</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">weeks.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">As</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">result</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Bark's</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">body</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">had</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">look</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">of</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">15</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">someone</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">who</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">worked</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">out</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">very</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">regularly</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">on</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">only</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">one</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">muscle</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">group</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">at</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">time.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">It</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">probably</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">also</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">meant</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">could</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">maintain</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">an</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">15</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">someone</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">who</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">worked</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">out</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">very</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">regularly</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">on</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">only</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">one</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">muscle</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">group</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">at</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">time.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">It</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">probably</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">also</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">meant</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">could</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">maintain</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">an</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">16</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">erection</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">for</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">hours,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">fact</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">that</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">was</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">sure</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">s</span>
+<span class="C1">c</span>
+<span class="U1">lling</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">point</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">with</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Fed's</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">mother.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Fed</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">didn't</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">mind;</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">well</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">known</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">side</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">affect</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">was</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">an</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">16</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">erection</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">for</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">hours,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">fact</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">that</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">was</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">sure</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">s</span>
+<span class="C2">e</span>
+<span class="U2">lling</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">point</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">with</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Fed's</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">mother.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Fed</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">didn't</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">mind;</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">well</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">known</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">side</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">affect</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">was</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">an</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">17</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">inability&nbsp;</span>
+<span class="U1">to&nbsp;ejacula</span>
+<span class="U1">te.&nbsp;</span>
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">17</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;inability</span>
+<span class="U2">&nbsp;to&nbsp;ejacul</span>
+<span class="U2">ate.</span>
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">18</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">"You</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">ought</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">to</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">come</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">down</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">to</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">shop</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">sometime</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">take</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">look</span>
+<span class="C1">,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Fed"</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Bark</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">said.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">"My</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">muscleman,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">kinda</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">looks</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">like</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">18</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">"You</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">ought</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">to</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">come</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">down</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">to</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">shop</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">sometime</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">take</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">look</span>
+<span class="C2">.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Fed"</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Bark</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">said.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">"My</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">muscleman,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">kinda</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">looks</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">like</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">19</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">you.&nbsp;Name'</span>
+<span class="U1">s&nbsp;Tony."&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">19</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;you.&nbsp;Name</span>
+<span class="U2">'s&nbsp;Tony."</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">20</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">Something</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">inside</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Fed</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">did</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">con</span>
+<span class="C1">y</span>
+<span class="U1">ulsive</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">somersault</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">around</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">halfa</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">soy</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">patty.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">20</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">Something</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">inside</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Fed</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">did</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">con</span>
+<span class="C2">v</span>
+<span class="U2">ulsive</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">somersault</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">around</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">half</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">soy</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">patty.</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">21</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">"Tony?"&nbsp;as</span>
+<span class="U1">ked&nbsp;Fed's&nbsp;</span>
+<span class="U1">Mom,&nbsp;wonde</span>
+<span class="U1">ringly,&nbsp;"T</span>
+<span class="U1">ony&nbsp;Farker</span>
+<span class="U1">en?"&nbsp;</span>
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">21</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;"Tony?"&nbsp;a</span>
+<span class="U2">sked&nbsp;Fed's</span>
+<span class="U2">&nbsp;Mom,&nbsp;wond</span>
+<span class="U2">eringly,&nbsp;"</span>
+<span class="U2">Tony&nbsp;Farke</span>
+<span class="U2">ren?"</span>
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">22</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">"Yeah!</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Old</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Farker!</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">You</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">know</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">him</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">somehow?"</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">said</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Bark,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">delighted</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">in</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">dull,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">dog-</span>
+<span class="R1">-</span>
+<span class="U1">like</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">way</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">that</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">had</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">managed</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">to</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">22</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">"Yeah!</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Old</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Farker!</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">You</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">know</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">him</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">somehow?"</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">said</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Bark,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">delighted</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">in</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">dull,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">dog-</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">like</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">way</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">that</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">had</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">managed</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">to</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">23</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">g</span>
+<span class="C1">c</span>
+<span class="U1">t</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">everyone's</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">attention</span>
+<span class="C1">,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">23</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">g</span>
+<span class="C2">e</span>
+<span class="U2">t</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">everyone's</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">attention</span>
+<span class="C2">.</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">24</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">"We&nbsp;know&nbsp;h</span>
+<span class="U1">im"&nbsp;said&nbsp;F</span>
+<span class="U1">ed,&nbsp;steadi</span>
+<span class="U1">ly.&nbsp;He&nbsp;sho</span>
+<span class="U1">ved&nbsp;the&nbsp;re</span>
+<span class="U1">mains&nbsp;ofhi</span>
+<span class="U1">s&nbsp;soy&nbsp;patt</span>
+<span class="U1">y&nbsp;into&nbsp;his</span>
+<span class="U1">&nbsp;mouth,&nbsp;hi</span>
+<span class="U1">s&nbsp;cheeks&nbsp;b</span>
+<span class="U1">ulging,&nbsp;an</span>
+<span class="U1">d&nbsp;</span>
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">24</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;"We&nbsp;know&nbsp;</span>
+<span class="U2">him"&nbsp;said&nbsp;</span>
+<span class="U2">Fed,&nbsp;stead</span>
+<span class="U2">ily.&nbsp;He&nbsp;sh</span>
+<span class="U2">oved&nbsp;the&nbsp;r</span>
+<span class="U2">emains&nbsp;of&nbsp;</span>
+<span class="U2">his&nbsp;soy&nbsp;pa</span>
+<span class="U2">tty&nbsp;into&nbsp;h</span>
+<span class="U2">is&nbsp;mouth,&nbsp;</span>
+<span class="U2">his&nbsp;cheeks</span>
+<span class="U2">&nbsp;bulging,&nbsp;</span>
+<span class="U2">and</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">25</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">went&nbsp;back&nbsp;</span>
+<span class="U1">to&nbsp;his&nbsp;cod</span>
+<span class="U1">e.&nbsp;</span>
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">25</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;went&nbsp;back</span>
+<span class="U2">&nbsp;to&nbsp;his&nbsp;co</span>
+<span class="U2">de.</span>
+</td>
+</tr>
+<tr>
+<td class="R1 ln-no" style="text-align: right;">26</td>
+<td class="R1" style="text-decoration: none;">&nbsp;</td>
+<td class="R1">
+<span class="R1" />
+</td>
+<td>&nbsp;</td>
+<td style="background-color: #f5f5f5;">&nbsp;</td>
+<td style="background-color: #f5f5f5;">&nbsp;</td>
+<td style="background-color: #f5f5f5;">&nbsp;</td>
+</tr>
+<tr>
+<td class="R1 ln-no" style="text-align: right;">27</td>
+<td class="R1" style="text-decoration: none;">&nbsp;</td>
+<td class="R1">
+<span class="R1" />
+</td>
+<td>&nbsp;</td>
+<td style="background-color: #f5f5f5;">&nbsp;</td>
+<td style="background-color: #f5f5f5;">&nbsp;</td>
+<td style="background-color: #f5f5f5;">&nbsp;</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">28</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">It&nbsp;took&nbsp;tw</span>
+<span class="U1">o&nbsp;weeks&nbsp;fo</span>
+<span class="U1">r&nbsp;Fed&nbsp;to&nbsp;f</span>
+<span class="U1">ind&nbsp;the&nbsp;ti</span>
+<span class="U1">me&nbsp;and&nbsp;wor</span>
+<span class="U1">k&nbsp;up&nbsp;the&nbsp;c</span>
+<span class="U1">ourage&nbsp;to&nbsp;</span>
+<span class="U1">see&nbsp;Tony.&nbsp;</span>
+<span class="U1">After&nbsp;he'd</span>
+<span class="U1">&nbsp;bailed&nbsp;fr</span>
+<span class="U1">om&nbsp;MIT&nbsp;Fed</span>
+<span class="U1">'d&nbsp;</span>
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">26</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">It&nbsp;took&nbsp;tw</span>
+<span class="U2">o&nbsp;weeks&nbsp;fo</span>
+<span class="U2">r&nbsp;Fed&nbsp;to&nbsp;f</span>
+<span class="U2">ind&nbsp;the&nbsp;ti</span>
+<span class="U2">me&nbsp;and&nbsp;wor</span>
+<span class="U2">k&nbsp;up&nbsp;the&nbsp;c</span>
+<span class="U2">ourage&nbsp;to&nbsp;</span>
+<span class="U2">see&nbsp;Tony.&nbsp;</span>
+<span class="U2">After&nbsp;he'd</span>
+<span class="U2">&nbsp;bailed&nbsp;fr</span>
+<span class="U2">om&nbsp;MIT&nbsp;Fed</span>
+<span class="U2">'d</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">29</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">pretty&nbsp;muc</span>
+<span class="U1">h&nbsp;written&nbsp;</span>
+<span class="U1">him&nbsp;off;&nbsp;h</span>
+<span class="U1">e&nbsp;had&nbsp;neve</span>
+<span class="U1">r&nbsp;come&nbsp;bac</span>
+<span class="U1">k&nbsp;home,&nbsp;ju</span>
+<span class="U1">st&nbsp;emailed</span>
+<span class="U1">&nbsp;Fed's&nbsp;Mom</span>
+<span class="U1">&nbsp;that&nbsp;he&nbsp;w</span>
+<span class="U1">as&nbsp;done&nbsp;wi</span>
+<span class="U1">th&nbsp;MIT&nbsp;and</span>
+<span class="U1">&nbsp;was&nbsp;</span>
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">27</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;pretty&nbsp;mu</span>
+<span class="U2">ch&nbsp;written</span>
+<span class="U2">&nbsp;him&nbsp;off;&nbsp;</span>
+<span class="U2">he&nbsp;had&nbsp;nev</span>
+<span class="U2">er&nbsp;come&nbsp;ba</span>
+<span class="U2">ck&nbsp;home,&nbsp;j</span>
+<span class="U2">ust&nbsp;emaile</span>
+<span class="U2">d&nbsp;Fed's&nbsp;Mo</span>
+<span class="U2">m&nbsp;that&nbsp;he&nbsp;</span>
+<span class="U2">was&nbsp;done&nbsp;w</span>
+<span class="U2">ith&nbsp;MIT&nbsp;an</span>
+<span class="U2">d&nbsp;was</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">30</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">exploring&nbsp;</span>
+<span class="U1">better&nbsp;hor</span>
+<span class="U1">izons.&nbsp;Fed</span>
+<span class="U1">&nbsp;knew&nbsp;they</span>
+<span class="U1">'d&nbsp;spoken&nbsp;</span>
+<span class="U1">at&nbsp;least&nbsp;o</span>
+<span class="U1">nce&nbsp;afterw</span>
+<span class="U1">ards,&nbsp;most</span>
+<span class="U1">ly&nbsp;because</span>
+<span class="U1">&nbsp;of&nbsp;the&nbsp;fo</span>
+<span class="U1">ur&nbsp;six-pac</span>
+<span class="U1">ks&nbsp;of&nbsp;Red&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">28</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;exploring</span>
+<span class="U2">&nbsp;better&nbsp;ho</span>
+<span class="U2">rizons.&nbsp;Fe</span>
+<span class="U2">d&nbsp;knew&nbsp;the</span>
+<span class="U2">y'd&nbsp;spoken</span>
+<span class="U2">&nbsp;at&nbsp;least&nbsp;</span>
+<span class="U2">once&nbsp;after</span>
+<span class="U2">wards,&nbsp;mos</span>
+<span class="U2">tly&nbsp;becaus</span>
+<span class="U2">e&nbsp;of&nbsp;the&nbsp;f</span>
+<span class="U2">our&nbsp;six-pa</span>
+<span class="U2">cks&nbsp;of&nbsp;Red</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">31</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">Stripe</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">strewn</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">sticky</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="C1">c</span>
+<span class="U1">mpty</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">across</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">living-</span>
+<span class="R1">-</span>
+<span class="U1">room</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">floor</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">one</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Sunday</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">af</span>
+<span class="R1">i</span>
+<span class="U1">ternoon,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">but</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">never</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">found</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">out</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">where</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Tony</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">had</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">29</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">Stripe</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">strewn</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">sticky</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2">&nbsp;</span>
+<span class="C2">e</span>
+<span class="U2">mpty</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">across</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">living-</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">room</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">floor</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">one</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Sunday</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">af</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">ternoon,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">but</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">never</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">found</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">out</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">where</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Tony</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">had</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">32</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">ended</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">up.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">After</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">bringing</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">it</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">up</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">once</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">with</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">his</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Mom</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">(and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">regretting</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">it)</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he'd</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">decided</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">not</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">to</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">think</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">about</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">it</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">anymore</span>
+<span class="U1">&nbsp;</span>
+<span class="C1">.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Tony'd</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">30</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">ended</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">up.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">After</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">bringing</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">it</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">up</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">once</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">with</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">his</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Mom</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">(and</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">regretting</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">it)</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he'd</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">decided</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">not</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">to</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">think</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">about</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">it</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">anymore</span>
+<span class="U2">&nbsp;</span>
+<span class="C2">-</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Tony'd</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">33</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">never&nbsp;been</span>
+<span class="U1">&nbsp;around&nbsp;mu</span>
+<span class="U1">ch&nbsp;anyway,</span>
+<span class="U1">&nbsp;and&nbsp;this&nbsp;</span>
+<span class="U1">meant&nbsp;Fed&nbsp;</span>
+<span class="U1">could&nbsp;put&nbsp;</span>
+<span class="U1">the&nbsp;bottom</span>
+<span class="U1">&nbsp;bunk&nbsp;to&nbsp;g</span>
+<span class="U1">ood&nbsp;use&nbsp;by</span>
+<span class="U1">&nbsp;mounting&nbsp;</span>
+<span class="U1">his&nbsp;databa</span>
+<span class="U1">se&nbsp;</span>
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">31</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;never&nbsp;bee</span>
+<span class="U2">n&nbsp;around&nbsp;m</span>
+<span class="U2">uch&nbsp;anyway</span>
+<span class="U2">,&nbsp;and&nbsp;this</span>
+<span class="U2">&nbsp;meant&nbsp;Fed</span>
+<span class="U2">&nbsp;could&nbsp;put</span>
+<span class="U2">&nbsp;the&nbsp;botto</span>
+<span class="U2">m&nbsp;bunk&nbsp;to&nbsp;</span>
+<span class="U2">good&nbsp;use&nbsp;b</span>
+<span class="U2">y&nbsp;mounting</span>
+<span class="U2">&nbsp;his&nbsp;datab</span>
+<span class="U2">ase</span>
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">34</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">cluster</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">of</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">salvaged</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">hardware</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">somewhere</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">that</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">danger</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">ofov</span>
+<span class="C1">c</span>
+<span class="U1">rheating</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">wasn't</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">such</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">an</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">issue.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">A</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">few</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">months</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">later</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Fed</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">took</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">32</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">cluster</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">of</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">salvaged</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">hardware</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">somewhere</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">that</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">danger</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">of</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">ov</span>
+<span class="C2">e</span>
+<span class="U2">rheating</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">wasn't</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">such</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">an</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">issue.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">A</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">few</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">months</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">later</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Fed</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">took</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">35</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">down</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">one</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">of</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Tony's</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">old</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">The</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Cure</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">posters</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">to</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">make</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">room</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">for</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">sh</span>
+<span class="C1">c</span>
+<span class="U1">afof</span>
+<span class="R1">/</span>
+<span class="U1">printouts</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">on</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">new</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">chording</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">key</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">combinatio</span>
+<span class="U1">ns</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">33</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">down</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">one</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">of</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Tony's</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">old</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">The</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Cure</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">posters</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">to</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">make</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">room</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">for</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">sh</span>
+<span class="C2">e</span>
+<span class="U2">af</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">of</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">printouts</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">on</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">new</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">chording</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">key</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">combinatio</span>
+<span class="U2">ns</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">36</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">realized</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he'd</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">cancelled</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">his</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">brother</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">out</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">ofhis</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">life</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">in</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">exchange</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">for</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">more</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">time</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">focused</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">on</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">coding.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">The</span>
+<span class="U1">&nbsp;</span>
+<span class="C1">c</span>
+<span class="U1">nsuing</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">twenty-</span>
+<span class="R1">-</span>
+<span class="U1">four</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">hour</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">34</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">realized</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he'd</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">cancelled</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">his</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">brother</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">out</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">of</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">his</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">life</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">in</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">exchange</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">for</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">more</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">time</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">focused</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">on</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">coding.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">The</span>
+<span class="U2">&nbsp;</span>
+<span class="C2">e</span>
+<span class="U2">nsuing</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">twenty-</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">four</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">hour</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">37</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">scripting</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">binge</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">had</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">resulted</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">in</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">render-far</span>
+<span class="U1">m</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">plugin</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he'd</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">traded</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">for</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">new</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">rig</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">out</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">of</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">midland</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">China,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Fed</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">had</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">never</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">35</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">scripting</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">binge</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">had</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">resulted</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">in</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">render-far</span>
+<span class="U2">m</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">plugin</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he'd</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">traded</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">for</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">new</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">rig</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">out</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">of</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">midland</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">China,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Fed</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">had</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">never</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">38</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">looked&nbsp;bac</span>
+<span class="U1">k.&nbsp;Until&nbsp;n</span>
+<span class="U1">ow.&nbsp;</span>
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">36</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;looked&nbsp;ba</span>
+<span class="U2">ck.&nbsp;Until&nbsp;</span>
+<span class="U2">now.</span>
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">39</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">The</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">shuttle</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">from</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">his</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">housing</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">park</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">was</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">late</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">as</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">usual,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">ended</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">up</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">stuck</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">at</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">rail</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">station</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">with</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">half</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">hour</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">37</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">The</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">shuttle</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">from</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">his</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">housing</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">park</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">was</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">late</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">as</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">usual,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">ended</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">up</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">stuck</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">at</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">rail</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">station</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">with</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">half</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">hour</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">40</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">between</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">trains.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">While</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">was</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">there</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">logged</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">in</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">on</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">local</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">net</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">double-che</span>
+<span class="U1">cked</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">his</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">mail,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">spawning</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">coupl</span>
+<span class="C1">c</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">newsbots</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">38</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">between</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">trains.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">While</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">was</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">there</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">logged</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">in</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">on</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">local</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">net</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">double-che</span>
+<span class="U2">cked</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">his</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">mail,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">spawning</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="U2">&nbsp;</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">coupl</span>
+<span class="C2">e</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">newsbots</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">41</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">to</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">try</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">to</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">dig</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">up</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">anything</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">new</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">on</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Tony's</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">shop</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">while</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">waited.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Nothing</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">interestin</span>
+<span class="U1">g</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">turned</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">up</span>
+<span class="U1">&nbsp;</span>
+<span class="C1">.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Greener</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Pastures</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">was</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">just</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">a</span>
+<span class="R1">a</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">39</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">to</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">try</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">to</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">dig</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">up</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">anything</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">new</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">on</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Tony's</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">shop</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">while</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">waited.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Nothing</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">interestin</span>
+<span class="U2">g</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">turned</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">up</span>
+<span class="U2">&nbsp;</span>
+<span class="C2">-</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Greener</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Pastures</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">was</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">just</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">a</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">42</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">regular</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">tattoo</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">/</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">body-shop,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">pret</span>
+<span class="C1">l</span>
+<span class="U1">y</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">much</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">like</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">any</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">other,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">although</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">online</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">pics</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">showed</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">some</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">pret</span>
+<span class="C1">l</span>
+<span class="U1">y</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">flash</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">stuff</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">with</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">muscle</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">40</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">regular</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">tattoo</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">/</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">body-shop,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">pret</span>
+<span class="C2">t</span>
+<span class="U2">y</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">much</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">like</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">any</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">other,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">although</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">online</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">pics</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">showed</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">some</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">pret</span>
+<span class="C2">t</span>
+<span class="U2">y</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">flash</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">stuff</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">with</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">muscle</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">43</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">therapies&nbsp;</span>
+<span class="U1">and&nbsp;bone&nbsp;i</span>
+<span class="U1">mplants.&nbsp;M</span>
+<span class="U1">ade&nbsp;sense;</span>
+<span class="U1">&nbsp;Tony&nbsp;had&nbsp;</span>
+<span class="U1">been&nbsp;check</span>
+<span class="U1">ed&nbsp;as&nbsp;one&nbsp;</span>
+<span class="U1">of&nbsp;the&nbsp;top</span>
+<span class="U1">&nbsp;candidate</span>
+<span class="U1">s&nbsp;in&nbsp;his&nbsp;c</span>
+<span class="U1">lass&nbsp;in&nbsp;th</span>
+<span class="U1">e&nbsp;bioscien</span>
+<span class="U1">ces&nbsp;</span>
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">41</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;therapies</span>
+<span class="U2">&nbsp;and&nbsp;bone&nbsp;</span>
+<span class="U2">implants.&nbsp;</span>
+<span class="U2">Made&nbsp;sense</span>
+<span class="U2">;&nbsp;Tony&nbsp;had</span>
+<span class="U2">&nbsp;been&nbsp;chec</span>
+<span class="U2">ked&nbsp;as&nbsp;one</span>
+<span class="U2">&nbsp;of&nbsp;the&nbsp;to</span>
+<span class="U2">p&nbsp;candidat</span>
+<span class="U2">es&nbsp;in&nbsp;his&nbsp;</span>
+<span class="U2">class&nbsp;in&nbsp;t</span>
+<span class="U2">he&nbsp;bioscie</span>
+<span class="U2">nces</span>
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">44</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">at</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">MIT</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">before</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he'd</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">bailed.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">And</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he'd</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">always</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">loved</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">bo</span>
+<span class="R1">c</span>
+<span class="U1">dmod</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">scene</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">even</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">ifhe</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">was</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">too</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">clean-cut</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">to</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">be</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">part</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">of</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">it.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Now</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">that</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">42</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">at</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">MIT</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">before</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he'd</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">bailed.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">And</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he'd</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">always</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">loved</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">bo</span>
+<span class="R2">
+<div class="IP"> </div>
+</span>
+<span class="U2">dmod</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">scene</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">even</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">if</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">was</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">too</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">clean-cut</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">to</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">be</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">part</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">of</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">it.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Now</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">that</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">45</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">wasn't</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">in</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">school</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">anymore</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">it</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">figured</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">that</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he'd</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">g</span>
+<span class="C1">c</span>
+<span class="U1">t</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">involved</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">there.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">43</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">wasn't</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">in</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">school</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">anymore</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">it</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">figured</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">that</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he'd</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">g</span>
+<span class="C2">e</span>
+<span class="U2">t</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">involved</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">there.</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">46</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">The</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">train</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">pull</span>
+<span class="C1">c</span>
+<span class="U1">d</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">up</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">he</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">got</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">on,</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">rolling</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">his</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">eyes</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">inwardly</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">at</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">solid</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">wall</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">of</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">low-level</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">corporates</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">lined</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">up</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">neat</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">44</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">The</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">train</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">pull</span>
+<span class="C2">e</span>
+<span class="U2">d</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">up</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">he</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">got</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">on,</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">rolling</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">his</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">eyes</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">inwardly</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">at</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">solid</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">wall</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">of</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">low-level</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">corporates</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">lined</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">up</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">neat</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">47</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">tidy</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">in</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">their</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">uniforms.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">Interspers</span>
+<span class="U1">ed</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">between</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">them</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">like</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">p</span>
+<span class="C1">c</span>
+<span class="U1">acocks</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">among</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">pigions</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">were</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">the</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">contractor</span>
+<span class="U1">s</span>
+<span class="U1">&nbsp;</span>
+<span class="C1">.</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">flashy</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">clothes</span>
+<span class="U1">&nbsp;</span>
+<span class="U1">and</span>
+<span class="U1">&nbsp;</span>
+<span class="U1" />
+</td>
+<td>&nbsp;</td>
+<td class="C2 ln-no" style="text-align: right;">45</td>
+<td class="C2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC2">
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">tidy</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">in</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">their</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">uniforms.</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">Interspers</span>
+<span class="U2">ed</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">between</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">them</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">like</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">p</span>
+<span class="C2">e</span>
+<span class="U2">acocks</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">among</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">pigions</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">were</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">the</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">contractor</span>
+<span class="U2">s</span>
+<span class="U2">&nbsp;</span>
+<span class="C2">-</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">flashy</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">clothes</span>
+<span class="U2">&nbsp;</span>
+<span class="U2">and</span>
+<span class="U2" />
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">48</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">spiky&nbsp;hair</span>
+<span class="U1">&nbsp;and&nbsp;expen</span>
+<span class="U1">sive&nbsp;corne</span>
+<span class="U1">al&nbsp;replace</span>
+<span class="U1">ments&nbsp;set&nbsp;</span>
+<span class="U1">in&nbsp;deep-se</span>
+<span class="U1">t,&nbsp;sleep-d</span>
+<span class="U1">eprived&nbsp;ey</span>
+<span class="U1">es.&nbsp;The&nbsp;di</span>
+<span class="U1">fference,&nbsp;</span>
+<span class="U1">in&nbsp;Fed's&nbsp;m</span>
+<span class="U1">ind,&nbsp;was&nbsp;i</span>
+<span class="U1">n&nbsp;the&nbsp;</span>
+</td>
+<td>&nbsp;</td>
+<td class="U2 ln-no" style="text-align: right;">46</td>
+<td class="U2" style="text-decoration: none;">&nbsp;</td>
+<td class="U2">
+<span class="U2">&nbsp;spiky&nbsp;hai</span>
+<span class="U2">r&nbsp;and&nbsp;expe</span>
+<span class="U2">nsive&nbsp;corn</span>
+<span class="U2">eal&nbsp;replac</span>
+<span class="U2">ements&nbsp;set</span>
+<span class="U2">&nbsp;in&nbsp;deep-s</span>
+<span class="U2">et,&nbsp;sleep-</span>
+<span class="U2">deprived&nbsp;e</span>
+<span class="U2">yes.&nbsp;The&nbsp;d</span>
+<span class="U2">ifference,</span>
+<span class="U2">&nbsp;in&nbsp;Fed's&nbsp;</span>
+<span class="U2">mind,&nbsp;was&nbsp;</span>
+<span class="U2">in&nbsp;the</span>
+</td>
+</tr>
+</table>
+<p class="copyright" style="margin-top: 25px; padding-top: 2px; border-top: solid #a0a0a0 1px; max-width: none;">Araxis Merge (but not the data content of this report) is Copyright  &copy; 1993-2017 Araxis Ltd (<a href="https://www.araxis.com/" title="Link to the Araxis corporate web site">www.araxis.com</a>). All rights reserved.</p>
+</body>
+</html>
